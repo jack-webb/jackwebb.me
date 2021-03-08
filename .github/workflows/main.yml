@@ -19,19 +19,11 @@ jobs:
       - name: S3 Deploy
         uses: Reggionick/s3-deploy@v3.1.0
         with:
-          # Directory to deploy
           folder: .
-          # Name of AWS Bucket
           bucket: ${{ secrets.S3_BUCKET_NAME }}
-          # The destination bucket region
           bucket-region: ${{ secrets.S3_BUCKET_REGION }}
-          # AWS CloudFront distribution ID
           dist-id: ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }}
-          # AWS CloudFront invalidation path(s)
           invalidation: /
-          # Removes files in S3 that are not available in the local copy of the directory
           delete-removed: true
-          # Use this parameter to specify Cache-Control: no-cache, no-store, must-revalidate header
           no-cache: true
-          # Upload files with private ACL, needed for S3 static website hosting
           private: true
