@@ -70,10 +70,10 @@ p > a {
     font-size: 2em;
 }
 
+.tippy-box[data-theme~=light-border]{background-color:#333;font-size: 0.8em;}
+
 @media (max-width: 800px) {
-    body {
-        display: block;
-    }
+    body { display: block; }
 
     nav {
         position: initial;
@@ -105,19 +105,22 @@ p > a {
     h2 {
         margin-top: 0;
         margin-bottom: 0;
-
     }
 }
 
 @media (max-width: 465px) {
-    li {
-        padding: 1em;
-    }
+    li { padding: 1em; }
 
-    .fab,
-    .fas {
-        font-size: 1.5em;
-    }
+    .fab, .fas { font-size: 1.5em; }
 }
 
-.tippy-box[data-theme~=light-border]{background-color:#333;font-size: 0.8em;}
+@media (prefers-color-scheme: dark) {
+    body {
+        background: url(img/bg-progressive.jpg) no-repeat center center fixed;
+        background-color: #131313;
+        color: #fff;
+    }
+    a { color: #fff; }
+    a:hover { color: #ddd; }
+    .tippy-box[data-theme~=light-border] { background-color:#ddd; }
+}
