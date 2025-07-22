@@ -20,7 +20,11 @@ jobs:
           bucket: ${{ secrets.S3_BUCKET_NAME }}
           bucket-region: ${{ secrets.S3_BUCKET_REGION }}
           dist-id: ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }}
-          invalidation: /
+          invalidation: '/*'
           delete-removed: true
-          no-cache: true
           private: true
+          files-to-include: '**/*'
+          files-without-cache: 'index.html, 404.html, 403.html'
+          cache-control: 'public, max-age=31536000, immutable'
+          cache-control-no-cache: 'no-cache, no-store, must-revalidate'
+
