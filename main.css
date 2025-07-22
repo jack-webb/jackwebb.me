@@ -3,8 +3,7 @@ html {
 }
 
 body {
-    font-family: 'Atkinson Hyperlegible', sans-serif;
-    font-weight: 300;
+    font-family: 'Atkinson Hyperlegible Next', sans-serif;
     line-height: 1.45;
     font-size: 120%;
     display: flex;
@@ -16,12 +15,11 @@ body {
 
 h1 {
     font-size: 2em;
-    font-weight: 700;
     margin: .4em 0 0;
 }
 
 h2 {
-    font-weight: 300;
+    font-weight: 400;
     margin: .4em 0 0;
     font-style: italic;
 }
@@ -51,13 +49,14 @@ li {
 }
 
 a {
+    font-weight: 400;
     color: #000;
     text-decoration: none;
     transition: all .2s ease;
 }
 
 a:hover {
-    color: #333;
+    color: #444;
     transition: all .2s ease;
 }
 
@@ -70,7 +69,7 @@ p > a {
     font-size: 2em;
 }
 
-.tippy-box[data-theme~=light-border]{background-color:#333;font-size: 0.8em;}
+.tippy-box[data-theme~=light-border]{background-color:#444;font-size: 0.8em;}
 
 @media (max-width: 800px) {
     body { display: block; }
@@ -121,6 +120,6 @@ p > a {
         color: #fff;
     }
     a { color: #fff; }
-    a:hover { color: #ddd; }
-    .tippy-box[data-theme~=light-border] { background-color:#ddd; }
+    a:hover { color: #ccc; }
+    .tippy-box[data-theme~=light-border] { background-color:#ccc; }
 }
