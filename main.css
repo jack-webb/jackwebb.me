@@ -3,12 +3,20 @@ html {
 }
 
 body {
+    --size: 40px;
     font-family: 'Atkinson Hyperlegible Next', sans-serif;
     line-height: 1.45;
     font-size: 120%;
     display: flex;
-    background: url(img/bg-progressive-white.jpg) no-repeat center center fixed;
-    background-color: #f5f5f5;
+    background-size: var(--size) var(--size);
+    background-image:
+      conic-gradient(#eceef1 25%, #0000 0 50%, #f7f8f9 0 75%, #0000 0),
+      repeating-linear-gradient(
+        135deg,
+        #eceef1 0 12.5%, #f7f8f9 0 25%, #eceef1 0 37.5%, #f7f8f9 0 62.5%
+      );
+    background-color: #f7f8f9;
+    color: #000;
     margin: 0;
     padding-bottom: 1em;
 }
@@ -115,8 +123,14 @@ p > a {
 
 @media (prefers-color-scheme: dark) {
     body {
-        background: url(img/bg-progressive.jpg) no-repeat center center fixed;
-        background-color: #131313;
+        background-size: var(--size) var(--size);
+        background-image:
+          conic-gradient(#17171a 25%, #0000 0 50%, #121214 0 75%, #0000 0),
+          repeating-linear-gradient(
+            135deg,
+            #17171a 0 12.5%, #121214 0 25%, #17171a 0 37.5%, #121214 0 62.5%
+          );
+        background-color: #121214;
         color: #fff;
     }
     a { color: #fff; }
