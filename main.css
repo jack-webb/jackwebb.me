@@ -6,7 +6,7 @@ body {
     --size: 40px;
     font-family: 'Atkinson Hyperlegible Next', sans-serif;
     line-height: 1.45;
-    font-size: 120%;
+    font-size: clamp(1rem, 0.9rem + 0.5vw, 1.2rem);
     display: flex;
     background-size: var(--size) var(--size);
     background-image:
@@ -136,4 +136,27 @@ p > a {
     a { color: #fff; }
     a:hover { color: #ccc; }
     .tippy-box[data-theme~=light-border] { background-color:#ccc; }
+}
+
+body::after {
+    content: '';
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2.5em;
+    pointer-events: none;
+    background: linear-gradient(to bottom, transparent, #f7f8f9);
+    opacity: 1;
+    transition: opacity 0.25s ease;
+}
+
+body.is-at-bottom::after {
+    opacity: 0;
+}
+
+@media (prefers-color-scheme: dark) {
+    body::after {
+        background: linear-gradient(to bottom, transparent, #121214);
+    }
 }
